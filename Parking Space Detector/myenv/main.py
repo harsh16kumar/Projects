@@ -3,7 +3,7 @@ import pickle
 import cvzone
 import numpy as np
 
-cap = cv2.VideoCapture('ParkingSpace\myenv\carPark.mp4')
+cap = cv2.VideoCapture('Parking Space Detector\myenv\carPark.mp4')
 
 width , height = 107,48
 
@@ -29,12 +29,8 @@ def checkParkingSpace(imgPro):
     
     cvzone.putTextRect(img,str(spaceCounter),(100,50) , scale=3 , thickness=2,colorR=(10,255,0))
 
-    
 
-
-
-
-with open('ParkingSpace\myenv\CarParkPos','rb') as f:
+with open('Parking Space Detector\myenv\CarParkPos','rb') as f:
         posList = pickle.load(f)
 
 while True:

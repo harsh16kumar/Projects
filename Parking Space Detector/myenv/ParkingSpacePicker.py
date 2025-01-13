@@ -18,13 +18,13 @@ def mouseClick(events,x,y,flags,params):
             x1,y1 = pos
             if x1<x<x1+width and y1<y<y1+height:
                 posList.pop(i)
-    with open('ParkingSpace\myenv\CarParkPos','wb') as f:
+    with open('Parking Space Detector\myenv\CarParkPos','wb') as f:
             pickle.dump(posList,f)
     
 
 
 while True:
-    img = cv2.imread('ParkingSpace\myenv\carParkImg.png')
+    img = cv2.imread('Parking Space Detector\myenv\carParkImg.png')
     #cv2.rectangle(img,(50,192),(157,240),(255,0,255),2)
     for pos in posList:
         cv2.rectangle(img,pos,(pos[0]+width,pos[1]+height),(255,0,255),2)
